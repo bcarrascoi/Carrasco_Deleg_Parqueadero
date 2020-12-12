@@ -1,16 +1,21 @@
 package ec.ups.edu.proyecto.g1.transaccional.modelo;
 
+import java.util.Date;
+
 public class Transaccion {
-	private int numTransaccion;
+	
+	private int id;
 	private double monto;
-	private TipoTransaccion tipoTransaccion;
+	private int tipoTransaccion;
+	private Date fecha;
+	private String descripcion;
 	
 	
-	public int getNumTransaccion() {
-		return numTransaccion;
+	public int getId() {
+		return id;
 	}
-	public void setNumTransaccion(int numTransaccion) {
-		this.numTransaccion = numTransaccion;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public double getMonto() {
 		return monto;
@@ -18,13 +23,24 @@ public class Transaccion {
 	public void setMonto(double monto) {
 		this.monto = monto;
 	}
-	public TipoTransaccion getTipoTransaccion() {
+	public int getTipoTransaccion() {
 		return tipoTransaccion;
 	}
-	public void setTipoTransaccion(TipoTransaccion tipoTransaccion) {
+	public void setTipoTransaccion(int tipoTransaccion) {
 		this.tipoTransaccion = tipoTransaccion;
 	}
-
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 	
 	
 }

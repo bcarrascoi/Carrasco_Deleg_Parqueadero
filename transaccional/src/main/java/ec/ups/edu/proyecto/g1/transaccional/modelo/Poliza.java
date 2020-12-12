@@ -3,10 +3,12 @@ package ec.ups.edu.proyecto.g1.transaccional.modelo;
 import java.util.Date;
 
 public class Poliza {
+	
 	private int id;
 	private double monto;
-	private Date tiempo;
-	private double tasaInteres;
+	private Date fechaInicio;
+	private Date fechaFin;
+	private int tasaInteres;
 	
 	
 	public int getId() {
@@ -21,19 +23,24 @@ public class Poliza {
 	public void setMonto(double monto) {
 		this.monto = monto;
 	}
-	public Date getTiempo() {
-		return tiempo;
+	public Date getFechaInicio() {
+		return fechaInicio;
 	}
-	public void setTiempo(Date tiempo) {
-		this.tiempo = tiempo;
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
 	}
-	public double getTasaInteres() {
+	public Date getFechaFin() {
+		return fechaFin;
+	}
+	public void setFechaFin(Date fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+	public int getTasaInteres() {
 		return tasaInteres;
 	}
-	public void setTasaInteres(double tasaInteres) {
+	public void setTasaInteres(int tasaInteres) {
 		this.tasaInteres = tasaInteres;
 	}
 	
 	
-
 }

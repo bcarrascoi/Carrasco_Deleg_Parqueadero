@@ -3,18 +3,20 @@ package ec.ups.edu.proyecto.g1.transaccional.modelo;
 import java.util.Date;
 
 public class CuentaBancaria {
-	private int numBancaria;
-	private Date fechaApertura;
-	private Usuario usuario;
-	private CuentaAhorro cuentaAhorro;
-	private CuentaCorriente cuentaCorriente;
-	private Poliza poliza;
 	
-	public int getNumBancaria() {
-		return numBancaria;
+	private int id;
+	private Date fechaApertura;
+	private Cliente cliente;
+	private Poliza poliza;
+	private int tipoCuenta;
+	private Transaccion transaccion;
+	
+	
+	public int getId() {
+		return id;
 	}
-	public void setNumBancaria(int numBancaria) {
-		this.numBancaria = numBancaria;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public Date getFechaApertura() {
 		return fechaApertura;
@@ -22,23 +24,11 @@ public class CuentaBancaria {
 	public void setFechaApertura(Date fechaApertura) {
 		this.fechaApertura = fechaApertura;
 	}
-	public Usuario getUsuario() {
-		return usuario;
+	public Cliente getCliente() {
+		return cliente;
 	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	public CuentaAhorro getCuentaAhorro() {
-		return cuentaAhorro;
-	}
-	public void setCuentaAhorro(CuentaAhorro cuentaAhorro) {
-		this.cuentaAhorro = cuentaAhorro;
-	}
-	public CuentaCorriente getCuentaCorriente() {
-		return cuentaCorriente;
-	}
-	public void setCuentaCorriente(CuentaCorriente cuentaCorriente) {
-		this.cuentaCorriente = cuentaCorriente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	public Poliza getPoliza() {
 		return poliza;
@@ -46,6 +36,19 @@ public class CuentaBancaria {
 	public void setPoliza(Poliza poliza) {
 		this.poliza = poliza;
 	}
+	public int getTipoCuenta() {
+		return tipoCuenta;
+	}
+	public void setTipoCuenta(int tipoCuenta) {
+		this.tipoCuenta = tipoCuenta;
+	}
+	public Transaccion getTransaccion() {
+		return transaccion;
+	}
+	public void setTransaccion(Transaccion transaccion) {
+		this.transaccion = transaccion;
+	}
+	
 	
 	
 }
