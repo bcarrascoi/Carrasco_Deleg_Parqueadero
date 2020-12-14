@@ -8,8 +8,13 @@ import javax.persistence.Id;
 @Entity
 public class Cliente implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int id;
+	private String cedula;
 	private String nombre;
 	private String apellido;
 	private String correo;
@@ -27,7 +32,14 @@ public class Cliente implements Serializable {
 	public String getNombre() {
 		return nombre;
 	}
+	
+	public String getCedula() {
+		return cedula;
+	}
 
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -64,4 +76,12 @@ public class Cliente implements Serializable {
 		this.usuario = usuario;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [id=" + id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido
+				+ ", correo=" + correo + ", direccion=" + direccion + ", usuario=" + usuario + "]";
+	}
+
+	
 }
+

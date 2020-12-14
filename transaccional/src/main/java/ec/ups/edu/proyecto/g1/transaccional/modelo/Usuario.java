@@ -2,11 +2,21 @@ package ec.ups.edu.proyecto.g1.transaccional.modelo;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Usuario implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
 	private int id;
 	private String correo;
 	private String clave;
-	private int rol;
+	private String rol;
 
 	public int getId() {
 		return id;
@@ -32,11 +42,17 @@ public class Usuario implements Serializable{
 		this.clave = clave;
 	}
 
-	public int getRol() {
+	public String getRol() {
 		return rol;
 	}
-
-	public void setRol(int rol) {
+	public void setRol(String rol) {
 		this.rol = rol;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", correo=" + correo + ", clave=" + clave + ", rol=" + rol + "]";
+	}
+
+	
 }

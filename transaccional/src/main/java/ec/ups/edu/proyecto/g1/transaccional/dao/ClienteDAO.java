@@ -18,20 +18,23 @@ public class ClienteDAO {
 	public ClienteDAO() {
 		
 	}
+	
 	public boolean insert(Cliente cliente) throws SQLException {
-		String sql = "INSERT INTO Cliente (id, nombre, apellido, correo, direccion )" 
-	+ " VALUES (?, ?, ?, ?, ?)";
+		
+	String sql = "INSERT INTO Cliente (id, cedula, nombre, apellido, correo, direccion )" 
+	+ " VALUES (?, ?, ?, ?, ?, ?)";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, cliente.getId());
-		ps.setString(2, cliente.getNombre());
-		ps.setString(3, cliente.getApellido());
-		ps.setString(4, cliente.getCorreo());
-		ps.setString(5, cliente.getDireccion());
+		ps.setString(2, cliente.getCedula());
+		ps.setString(3, cliente.getNombre());
+		ps.setString(4, cliente.getApellido());
+		ps.setString(5, cliente.getCorreo());
+		ps.setString(6, cliente.getDireccion());
 		
 		ps.executeUpdate();
 		ps.close();
-		return true;
+		return true; 
 	}
 
 	public boolean update(Cliente cliente) {

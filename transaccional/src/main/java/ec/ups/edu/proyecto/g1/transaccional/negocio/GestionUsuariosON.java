@@ -21,7 +21,12 @@ public class GestionUsuariosON implements GestionUsuariosONRemoto{
 	
 	public boolean crearUsuario(Usuario usuario) {
 			
-		daoUsuario.insert(usuario);
+		try {
+			daoUsuario.insert(usuario);
+		} catch (SQLException e) {
+			System.out.println("Error");
+			e.printStackTrace();
+		}
 		
 		return true;
 	}
