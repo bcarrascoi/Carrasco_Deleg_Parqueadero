@@ -1,9 +1,15 @@
 package ec.ups.edu.proyecto.g1.transaccional.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Poliza {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Poliza implements Serializable {
+
+	@Id
 	private int id;
 	private double monto;
 	private Date fechaInicio;

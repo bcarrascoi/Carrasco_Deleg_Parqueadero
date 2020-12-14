@@ -8,9 +8,6 @@ import javax.persistence.Id;
 @Entity
 public class Cliente implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	private int id;

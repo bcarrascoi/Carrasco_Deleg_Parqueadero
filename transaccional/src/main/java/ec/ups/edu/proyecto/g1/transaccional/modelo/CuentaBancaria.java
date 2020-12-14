@@ -1,14 +1,20 @@
 package ec.ups.edu.proyecto.g1.transaccional.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CuentaBancaria {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class CuentaBancaria implements Serializable {
+
+	@Id
 	private int id;
 	private Date fechaApertura;
 	private Cliente cliente;
 	private Poliza poliza;
-	private int tipoCuenta;
+	private String tipoCuenta;
 	private Transaccion transaccion;
 
 	public int getId() {
@@ -43,11 +49,11 @@ public class CuentaBancaria {
 		this.poliza = poliza;
 	}
 
-	public int getTipoCuenta() {
+	public String getTipoCuenta() {
 		return tipoCuenta;
 	}
 
-	public void setTipoCuenta(int tipoCuenta) {
+	public void setTipoCuenta(String tipoCuenta) {
 		this.tipoCuenta = tipoCuenta;
 	}
 

@@ -1,25 +1,30 @@
 package ec.ups.edu.proyecto.g1.transaccional.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import ec.ups.edu.proyecto.g1.transaccional.modelo.Usuario;
 
 @Stateless
 public class UsuarioDAO {
 
-	@Inject	
-	private Connection con;
+	@PersistenceContext
+	EntityManager em;
 	
 	public UsuarioDAO() {
 		// TODO Auto-generated constructor stub
 	}
-	public boolean insert(Usuario usuario) throws SQLException {
+	 public boolean insert(Usuario usuario) throws SQLException {
+		 em.persist(usuario);
+		 return true;
+	 }
 	
+	/**
+	 public boolean insert(Usuario usuario) throws SQLException {
+	 
 	String sql = "INSERT INTO Usuario (id, correo, clave, rol)"+ 
 	"VALUES (?, ?, ?, ?)";
 	
@@ -33,4 +38,6 @@ public class UsuarioDAO {
 	ps.close();
 		return true;
 	}
+	*/
+	
 }
