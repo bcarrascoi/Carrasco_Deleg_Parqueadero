@@ -19,15 +19,17 @@ import java.awt.event.ActionListener;
 import java.util.Hashtable;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class VtnGestionUsuario extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtCorreo;
-	private JTextField txtRol;
 
 	private GestionUsuariosONRemoto on;
 	private JPasswordField txtClave;
+	private JComboBox cbRol;
 	/**
 	 * Launch the application.
 	 */
@@ -73,11 +75,6 @@ public class VtnGestionUsuario extends JFrame {
 		contentPane.add(txtCorreo);
 		txtCorreo.setColumns(10);
 		
-		txtRol = new JTextField();
-		txtRol.setBounds(119, 126, 96, 19);
-		contentPane.add(txtRol);
-		txtRol.setColumns(10);
-		
 		JButton btnCrearUsuario = new JButton("Crear Usuario");
 		btnCrearUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -90,14 +87,20 @@ public class VtnGestionUsuario extends JFrame {
 		txtClave = new JPasswordField();
 		txtClave.setBounds(119, 80, 159, 19);
 		contentPane.add(txtClave);
+		
+		cbRol = new JComboBox();
+		cbRol.setModel(new DefaultComboBoxModel(new String[] {"Administrador", "Cajero", "Asistente de captaciones"}));
+		cbRol.setBounds(119, 125, 129, 21);
+		contentPane.add(cbRol);
 	}
 	
 protected void crearUsuario() {
 		Usuario u = new Usuario();
 		u.setCorreo(txtCorreo.getText());
 		u.setClave(txtClave.getText());
-		u.setRol(txtRol.getText());
-		
+	
+		String rol = (String) cbRol.getSelectedItem();
+		u.setRol(rol);
 		try {
 			on.crearUsuario(u);
 			System.out.println("Guardado OK");
