@@ -1,7 +1,14 @@
 package ec.ups.edu.proyecto.g1.transaccional.modelo;
 
-public class Cliente {
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Cliente implements Serializable {
+
+	@Id
 	private int id;
 	private String nombre;
 	private String apellido;

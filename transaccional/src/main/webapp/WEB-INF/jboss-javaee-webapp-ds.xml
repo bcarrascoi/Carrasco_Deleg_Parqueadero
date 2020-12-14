@@ -17,17 +17,6 @@
 	xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
 	<!-- The datasource is bound into JNDI at this location. We reference this 
 		in META-INF/persistence.xml -->
-	<datasource jta="true"
-		jndi-name="java:jboss/datasources/transaccionalDS"
-		pool-name="transaccionalDS" enabled="true" use-java-context="true"
-		use-ccm="true">
-		<connection-url>jdbc:postgresql://localhost:5444/transaccional
-		</connection-url>
-		<driver>postgresql-driver</driver>
-		<security>
-			<user-name>banco</user-name>
-			<password>banco</password>
-		</security>
-	</datasource>
+	
 </datasources>
  

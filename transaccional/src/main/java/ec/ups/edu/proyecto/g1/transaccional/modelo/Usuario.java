@@ -1,6 +1,8 @@
 package ec.ups.edu.proyecto.g1.transaccional.modelo;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable{
 	private int id;
 	private String correo;
 	private String clave;
